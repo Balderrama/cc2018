@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Compu Componentes{% endblock %}</title>
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="{{ asset('css/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
+        <link href="https://file.myfontastic.com/pqAFGUNMhTbciQHi5dMuxL/icons.css" rel="stylesheet">
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('iconfav.ico') }}" />
+    </head>
+    <body>
+    <header>
+        <div class="container inner-header">
+            <figure class="logo">
+                <img src="{{ asset('img/logo-small.jpg') }}" alt="Compu Componentes">
+            </figure>
+            {#BOTON PARA MÓVIL#}
+            <div id="menu-toggle" class="hidden-md hidden-lg">
+                <div id="hamburger">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                </div>
+                <div id="cross">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            <nav class="menu">
+                <ul class="menu-list">
+                    <li class="list-item"><a href="{{ path('front_homepage') }}">Inicio</a></li>
+                    <li class="list-item"><a href="{{ path('front_empresa') }}">Empresa</a></li>
+                    <li class="list-item"><a href="{{ path('front_productos') }}">Productos</a>
+                        <ol class="submenu-list">
+                            {% for i in 0..22 %}
+                                <li class="sublist-item">
+                                    <a href="{{ path('front_productoDetalle') }}">Almacenamiento Externo</a>
+                                </li>
+                            {% endfor %}
+                        </ol>
+                    </li>
+                    <li class="list-item"><a href="{{ path('front_servicios') }}">Servicios</a>
+                        {#<ol class="submenu-list">#}
+                            {#{% for i in 0..22 %}#}
+                                {#<li class="sublist-item">#}
+                                    {#<a href="#">Reparación</a>#}
+                                {#</li>#}
+                            {#{% endfor %}#}
+                        {#</ol>#}
+                    </li>
+                    <li class="list-item"><a href="{{ path('front_contacto') }}">Contacto</a></li>
+                </ul>
+            </nav>
+            <div class="searcher menu hidden-xs hidden-sm">
+                <input type="search" placeholder="¿Qué estás buscando?" class="search-box">
+                <button class="searc-product icon-lupa"></button>
+            </div>
+            <div class="options-container menu ">
+                <a href="" class="log-in">Iniciar Sesión</a>
+                <a href="" class="car-quantity icon-car">(3)</a>
+            </div>
+        </div>
+    </header>
+        {% block body %}
+
+        {% endblock %}
+
+    <footer class="footer">
+        <div class="container top">
+            <figure class="logo">
+                <img src="{{ asset('img/logo-white.png') }}" alt="">
+            </figure>
+
+            <ul class="sections hidden-xs">
+                <li><a href="{{ path('front_homepage') }}">inicio</a></li>
+                <li><a href="{{ path('front_empresa') }}">empresa</a></li>
+                <li><a href="{{ path('front_productos') }}">productos</a></li>
+                <li><a href="{{ path('front_servicios') }}">servicios</a></li>
+                <li><a href="{{ path('front_contacto') }}">contacto</a></li>
+            </ul>
+
+            <div class="social">
+                <div class="phone">
+                    <span>Atención telefónica</span>
+                    <a href="tel:3338667185" class="tel">01 (33) 38 66 71 85</a>
+                </div>
+                <div class="newtwork">
+                    <a class="icon-facebook"></a>
+                    <a class="icon-twitter"></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <div class="after-footer">
+        <div class="container bottom">
+            <span>Todos los Derechos Reservados Componentes</span>
+            <a href="#">Aviso de Privacidad</a>
+        </div>
+    </div>
+
+    <script src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+    <script src="{{ asset('js/scripts.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

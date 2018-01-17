@@ -1,0 +1,140 @@
+{% extends "@Front/Default/base.html.twig" %}
+{% block title %}Inicio{% endblock %}
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+        <section class="banners">
+            <div class="owl-banners">
+                {% for i in 0..2 %}
+                    <div class="item">
+                        <img src="{{ asset('img/banners/banner-home-01.jpg') }}" alt="">
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+    <div class="container">
+        <section class="products">
+            <h3 class="title-section">Los más vendidos</h3>
+
+            <div class="flex-container">
+                <div class="owl-productos">
+                    {% for p in 0..5 %}
+                        <div class="flex-item-c item">
+
+                            <a href="{{ path('front_productoDetalle')  }}">
+                                <figure class="prod-image">
+                                    <span class="icon-lupa see"></span>
+                                    <img src="{{ asset('img/producto.jpg') }}" alt="">
+                                    <figcaption>
+                                        MONITOR ACER 19.5" V206HQL HD
+                                        VGA LED 1366X768 T.R. 5 MS NEGRO
+                                    </figcaption>
+                                </figure>
+                            </a>
+                            <div class="bottom">
+                                <div class="prices">
+                                    <h4 class="old-price">$5,317.00</h4>
+                                    <h4 class="current-price">$,257.20</h4>
+                                </div>
+                                <a href="" class="addToCar">Agregar al Carrito</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <h4>Servicios</h4>
+            <div class="flex-grid">
+                <div class="flex-item">
+                    <h2 class="title">Reparación de <em>pc's y laptops</em></h2>
+                    <img src="{{ asset('img/servicios/secciones-reparacion.jpg') }}" alt="">
+                </div>
+                <div class="flex-item">
+                    <h2 class="title">Instalación de <em>redes de oficina</em></h2>
+                    <img src="{{ asset('img/servicios/secciones-redes.jpg') }}" alt="">
+                </div>
+                <div class="flex-item">
+                    <h2 class="title">Instalación de <em>alarmas de seguridad</em></h2>
+                    <img src="{{ asset('img/servicios/secciones-alarmas.jpg') }}" alt="">
+                </div>
+                <div class="flex-item">
+                    <h2 class="title">Instalación de <em>cámaras de seguridad</em></h2>
+                    <img src="{{ asset('img/servicios/secciones-videocamaras.jpg') }}" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section class="components">
+            <figure>
+            </figure>
+            <div class="info-box">
+                <h3 class="title">COMPONENTES</h3>
+                <h2 class="desc">Componentes, Consumibles, Redes y Servicios Computacionales</h2>
+                <p class="paragraph">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eleifend placerat maximus. Maecenas dictum quis elit eget porta. Donec ut lorem eget est feugiat porta. Aliquam dignissim neque commodo, blandit sapien ac, tincidunt odio. Maecenas et ligula in nisi ornare fringilla id sed mauris.  Quisque eu eros nec dui laoreet dapibus. Praesent rhoncus mauris nibh, pharetra tempor enim blandit in. Nunc fermentum, dui vel varius vulputate, tellus ex ultricies lectus, eget efficitur erat est eget mauris.
+                </p>
+                <a href="{{ path('front_contacto') }}" class="contact-us">Contáctanos</a>
+            </div>
+        </section>
+
+        <section class="more-info">
+            <figure class="banner">
+                <img src="{{ asset('img/servicios/banner-producto-drone.jpg') }}" alt="">
+                <div class="mascara">
+                    <h5>El nuevo drone ya está aquí</h5>
+                    <h4>Parrot AR Drone 2.0</h4>
+                    <a href="" class="more">Ver más</a>
+                </div>
+            </figure>
+            <figure class="banner">
+                <img src="{{ asset('img/servicios/banner-serviciosdemantenimiento.jpg') }}" alt="">
+                <div class="triangle"></div>
+                <div class="mascara">
+                    <h5>Servicio de mantenimiento</h5>
+                    <h4>a empresas</h4>
+                    <a href="{{ path('front_servicios') }}" class="more">Ver más</a>
+                </div>
+            </figure>
+        </section>
+    </div>
+
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $('.owl-banners').owlCarousel({
+            dots: true,
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoPlayHoverPause: true,
+            autoPlaySpeed: 11000
+        });
+
+        $('.owl-productos').owlCarousel({
+            dots: true,
+            items: 4,
+            loop: true,
+            autoplay: true,
+            autoPlayHoverPause: true,
+            autoPlaySpeed: 11000,
+            responsive:{
+                0:{
+                    items: 1
+                },
+                480:{
+                    items: 2
+                },
+                767:{
+                    items: 3
+                },
+                992:{
+                    items: 4
+                }
+            }
+        });
+    </script>
+{% endblock %}

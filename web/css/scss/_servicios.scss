@@ -1,0 +1,38 @@
+.services-container{
+  margin-top: 40px;
+  margin-bottom: 50px;
+
+  h1.title-serv{
+    font-size: 40px;
+    font-family:$futStdBold;
+    color:$green;
+    text-align: center;
+  }
+  .serv-item{
+    width: 100%;
+    padding: 0 6px;
+    h2.service{
+      font-family:$futStdBook;
+      font-size: 20px;
+      color: $grayDark;
+      &::before{
+        content:'\2022';  //dot
+        color:$green;
+        padding-right: 10px;
+        font-size: 20px;
+      }
+    }
+    p.desc{
+      font-family:$futStdConLight;
+      font-size: 16px;
+      color: $grayLight;
+      margin: 25px 0 25px 90px;
+      @media screen and (max-width: 992px){
+        margin: 25px 0 25px 30px;
+      }
+      @media screen and (max-width: 768px){
+        margin: 15px 0 15px 0;
+      }
+    }
+  }
+}

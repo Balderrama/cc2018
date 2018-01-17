@@ -1,0 +1,59 @@
+{% extends "@Front/Default/base.html.twig" %}
+{% block title %}Productos{% endblock %}
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+    <figure class="banner">
+        <img src="{{ asset('img/banners/banner-contacto.jpg') }}" class="img-responsive" alt="">
+    </figure>
+
+    <div class="container">
+        <p class="desc">
+            Para mayor información sobre precios, cotizaciones, dudas o sugerencia. Contáctanos, agradecemos tu interés y preferencia, estamos a sus órdenes, con gusto le atenderemos.
+        </p>
+    </div>
+
+    <div class="container contact-container">
+       <div class="form-container">
+           {{ form_start(formUser) }}
+           {{ form_row(formUser.nombre,{'value':''}) }}
+           {{ form_row(formUser.apellido,{'value':''}) }}
+           {{ form_row(formUser.telefono,{'value':''}) }}
+           {{ form_row(formUser.email,{'value':''}) }}
+           {{ form_row(formUser.motivo,{'value':''}) }}
+           {{ form_row(formUser.mensaje,{'value':''}) }}
+           {{ form_end(formUser) }}
+       </div>
+        <div class="info">
+            <div class="flex-row">
+                <h4 class="head icon-location">Dirección</h4>
+                <span class="text">Revolución #44</span>
+                <span class="text">Col. Centro Guadalajara, Jalisco.</span>
+            </div>
+            <div class="flex-row">
+                <h4 class="head icon-phone">Teléfono</h4>
+                <span class="text">(33) 37 38 54 56</span>
+            </div>
+            <div class="flex-row">
+                <h4 class="head icon-mail">E-mail</h4>
+                <span class="text">contacto@componentes.com</span>
+            </div>
+            <div class="flex-row">
+                <h4 class="head icon-time"> Horarios</h4>
+                <span class="text">Lunes a Viernes 09:00 - 18:00</span>
+            </div>
+
+        </div>
+    </div>
+    {% include "@Front/Default/_modalContacto.html.twig" %}
+
+{% endblock %}
+{% block javascripts %}
+
+    <script>
+        {% if enviado is defined %}
+             $('#enviado').modal('show');
+        {% endif %}
+    </script>
+
+{% endblock %}

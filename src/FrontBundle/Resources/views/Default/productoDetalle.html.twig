@@ -1,0 +1,178 @@
+{% extends "@Front/Default/base.html.twig" %}
+{% block title %}Productos{% endblock %}
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+   <div class="container">
+
+       <div class="product-detail">
+           <div class="images">
+                <figure class="main-picture image-zoom">
+                    <img src="{{ asset('img/monitor.jpg') }}" class="img-responsive" alt="">
+                </figure>
+               <div class="owl-thumb">
+                   {% for i in 0..3 %}
+                       <div class="item">
+                           <img src="{{ asset('img/monitor.jpg') }}" alt="">
+                       </div>
+                   {% endfor %}
+               </div>
+           </div>
+           <div class="information">
+                <h3 class="bold-txt">MONITOR SAMSUNG 19.5" V206HQL HD VGA LED
+                    1366X768 T.R. 5 MS NEGRO</h3>
+                <div class="row">
+                    <span class="bold-txt">SKU:</span>
+                    <span class="light-txt">1000202486</span>
+                </div>
+               <div class="row">
+                   <span class="bold-txt">MODELO:</span>
+                   <span class="light-txt">1000202486</span>
+               </div>
+               <span class="old-price">$4,317.00</span>
+               <span class="current-price">$3,257.20</span>
+
+               <div class="select-product">
+                    <span class="quantity">Cantidad</span>
+                    <input type="number" id="cantidad" min="1" max="100" value="1">
+                   <a href="#" class="add-car">Agregar al Carrito</a>
+               </div>
+           </div>
+       </div>
+
+       <section class="products">
+           <h3 class="title-section">Los más vendidos</h3>
+
+           <div class="flex-container">
+               <div class="owl-productos">
+                   {% for p in 0..5 %}
+                       <div class="flex-item-c item">
+                           <a href="{{ path('front_productoDetalle') }}">
+                               <figure class="prod-image">
+                                   <span class="icon-lupa see"></span>
+                                   <img src="{{ asset('img/producto.jpg') }}" alt="">
+                                   <figcaption>
+                                       MONITOR ACER 19.5" V206HQL HD
+                                       VGA LED 1366X768 T.R. 5 MS NEGRO
+                                   </figcaption>
+                               </figure>
+                           </a>
+                           <div class="bottom">
+                               <div class="prices">
+                                   <h4 class="old-price">$5,317.00</h4>
+                                   <h4 class="current-price">$,257.20</h4>
+                               </div>
+                               <a href="" class="addToCar">Agregar al Carrito</a>
+                           </div>
+                       </div>
+                   {% endfor %}
+               </div>
+           </div>
+       </section>
+
+       <article class="banner-inf">
+           <div class="mask">
+               <h3>Contamos con una gran variedad</h3>
+               <h4>de cables y adaptadores</h4>
+               <a href="" class="more">Ver más</a>
+           </div>
+
+       </article>
+
+
+   </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+
+        $('.owl-thumb').owlCarousel({
+            dots: false,
+            nav: true,
+            items: 4,
+            loop: true,
+            autoplay: true,
+            autoPlayHoverPause: true,
+            autoPlaySpeed: 11000,
+            navText:['<i class="icon-left"></i>', '<i class="icon-right"></i>'],
+            responsive:{
+                0:{
+                    items: 1
+                },
+                480:{
+                    items: 2
+                },
+                767:{
+                    items: 3
+                },
+                992:{
+                    items: 3
+                }
+            }
+        });
+
+        $('.owl-productos').owlCarousel({
+            dots: true,
+            items: 4,
+            loop: true,
+            autoplay: true,
+            autoPlayHoverPause: true,
+            autoPlaySpeed: 11000,
+            responsive:{
+                0:{
+                    items: 1
+                },
+                480:{
+                    items: 2
+                },
+                767:{
+                    items: 3
+                },
+                992:{
+                    items: 4
+                }
+            }
+        });
+
+        //funcion para el zoom de la imagen
+        var src = $('.image-zoom').find('img').attr("src");
+        $('.image-zoom').append('<img class="zoom" style="position: absolute;" src="'+src+'" >');
+        $('.image-zoom').mouseenter(function(){
+
+            $(this).mousemove(function(event){
+
+                var offset = $(this).offset();
+                var left = event.pageX - offset.left;
+                var top = event.pageY - offset.top;
+
+                $(this).find('.zoom').css({
+                    width: '200%',
+                    opacity: 1,
+                    left: -left,
+                    top: -top,
+                    position: 'absolute'
+                })
+            });
+        });
+
+        $('.image-zoom').mouseleave(function(){
+            $(this).find('.zoom').css({
+                width: '100%',
+                opacity: 0,
+                left: 0,
+                top: 0
+            })
+        });
+
+        //cambia la imagen al dar clic en las miniaturas
+        $('.owl-thumb .item').each(function(i,e){
+            $(this).on("click",function(){
+                var img = $(this).find('img').attr("src");
+                console.log("CLICK " + img);
+                $('.preview img').attr("src",img);
+            });
+        });
+
+    </script>
+{% endblock %}

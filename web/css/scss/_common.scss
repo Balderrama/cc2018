@@ -1,0 +1,285 @@
+
+header{
+  min-height: 80px;
+  position: relative;
+  padding-bottom: 20px;
+  .inner-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    height: 100%;
+    @media screen and (max-width: 992px){
+      justify-content: center;
+    }
+    nav.menu{
+      width: 39%;
+      max-width: 300px;
+      margin: 0 25px;
+      @media screen and (max-width: 992px){
+        position: absolute;
+        left: -100%;
+        background: $grayMedium;
+        top: 65px;
+        z-index: 500;
+        margin: 0;
+        padding: 0 25px;
+        height: 100vh;
+      }
+      ul.menu-list{
+        display: flex;
+        justify-content: space-between;
+        list-style:none;
+        margin: 0;
+        padding: 0;
+        @media screen and (max-width: 992px){
+          flex-direction: column;
+        }
+      }
+      .list-item{
+        position: relative;
+        @media screen and (max-width: 992px){
+          min-height: 35px;
+          line-height: 35px;
+          padding-bottom: 10px;
+          &:nth-child(even){
+            border-bottom: 2px solid #E6E6E6;
+
+          }
+          &:nth-child(odd){
+            border-bottom: 2px solid #E6E6E6;
+          }
+
+        }
+        &:nth-child(3),&:nth-child(4){
+          &:hover{
+            ol.submenu-list{
+              display: block;
+            }
+          }
+        }
+        a{
+          font-family: $futStdBook;
+          font-size: 15px;
+          color:$grayMedium;
+          @media screen and (max-width: 992px){
+            color: $white;
+            text-decoration: none;
+          }
+        }
+        ol.submenu-list{
+          position: absolute;
+          z-index: 500;
+          background: $white;
+          width: 190px;
+          border: 1px solid $green;
+          padding: 0;
+          list-style: none;
+          top: 23px;
+          left: 10px;
+          display: none;
+          @media screen and (max-width: 992px){
+            position: static;
+            background: $grayMedium;
+            padding-left: 15px;
+            width: 100%;
+            border:none;
+          }
+          li.sublist-item{
+            padding: 0 10px 0 5px;
+            height: 20px;
+            transition: all .2s;
+            @media screen and (max-width: 992px){
+              height: 25px;
+            }
+            @media screen and (min-width: 993px){
+              &:hover{
+                background: $green;
+                a{
+                  color:$white;
+                }
+              }
+            }
+
+            a{
+              font-family: $futStdLight;
+              font-size: 14px;
+              color: $black;
+              transition: all .2s;
+              @media screen and (max-width: 992px){
+                color:#FFF;
+              }
+            }
+          }
+        }
+      }
+    }
+    .searcher{
+      width: 30%;
+      max-width: 250px;
+      position: relative;
+      margin: 0 30px;
+      input[type='search']{
+        border:1px solid #E6E6E6;
+        border-radius: 7px;
+        background: #ccc;
+        width: 100%;
+        font-family: $futStdLightOblique;
+        color:$grayNormal;
+        font-size: 12px;
+        text-indent: 5px;
+
+      }
+      button.searc-product{
+        position: absolute;
+        right: 0;
+        color:#999;
+        top:0;
+        border:none;
+        background: transparent;
+      }
+    }
+    .options-container{
+      width: 20%;
+      max-width: 195px;
+      @media screen and (max-width: 992px){
+        position: absolute;
+        right: 0;
+        width: 30%;
+      }
+      @media screen and (max-width: 530px){
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-right: 10px;
+      }
+
+      & > a{
+        font-family: $futStdLight;
+        font-size: 15px;
+        color:$grayMedium;
+        &:first-child{
+          @media screen and (max-width: 360px){
+              font-size: 14px;
+
+          }
+        }
+        &:last-child{
+          padding-left: 15px;
+        }
+        &:before{
+          display: inline-block;
+          background: $green;
+          width: 30px;
+          height: 30px;
+          font-size: 20px;
+          border-radius: 50%;
+          color: $white;
+          text-align: center;
+          line-height: 30px;
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+}
+
+
+footer.footer{
+  background: $grayDark;
+  width: 100%;
+
+  .top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 120px;
+    @media screen and (max-width: 992px){
+      padding: 30px 0;
+      flex-direction: column;
+    }
+    ul.sections{
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      padding: 0;
+      min-width: 390px;
+      @media screen and (max-width: 992px){
+        margin: 25px 0;
+      }
+      @media screen and (max-width: 450px){
+        flex-direction: column;
+        align-items: center;
+      }
+      a{
+        font-family: $futLight;
+        font-size: 17px;
+        color:$white;
+      }
+    }
+    .social{
+      display: flex;
+      .phone{
+        margin-right: 20px;
+        span,a{
+          color:$white;
+          display: block;
+        }
+      }
+      .newtwork{
+        a{
+          display: inline-block;
+          font-size: 35px;
+          margin: 0 5px;
+          color:$white;
+          text-decoration: none;
+          transition: all .4s;
+          cursor:pointer;
+          &:hover{
+            color:$green;
+
+          }
+        }
+      }
+    }
+  }
+}
+
+.after-footer{
+  background:$black;
+  width: 100%;
+  .bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 70px;
+    @media screen and (max-width: 400px){
+      flex-direction: column;
+    }
+    span,a{
+      font-family: $futStdLight;
+      font-size: 12px;
+      color:$white;
+    }
+  }
+}
+
+.owl-productos{
+  .owl-dots{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .owl-dot{
+      width: 15px;
+      height: 15px;
+      background: $grayMedium;
+      margin: 0 5px;
+      border-radius: 50%;
+      transition: all .2s;
+
+    }
+    .owl-dot.active{
+      background: $green;
+    }
+  }
+}

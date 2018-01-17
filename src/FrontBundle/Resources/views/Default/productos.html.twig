@@ -1,0 +1,114 @@
+{% extends "@Front/Default/base.html.twig" %}
+{% block title %}Productos{% endblock %}
+{% block stylesheets %}{% endblock %}
+
+{% block body %}
+   <div class="container">
+       <figure class="banner">
+           <img src="{{ asset('img/banners/familia-acer.jpg') }}" class="img-responsive" alt="">
+       </figure>
+
+       <h2 class="category">Monitores</h2>
+       <div class="products-bar">
+           <span class="txt">Total de Productos: 50</span>
+           <div class="paginator">
+               <span class="txt">Página</span>
+               <a href="" class="page">1</a>
+               <a href="" class="page current">2</a>
+               <a href="" class="page">3</a>
+               <a href="" class="page">4</a>
+           </div>
+           <div class="show-per-page">
+               <span class="txt">Mostrar</span>
+               <select name="" id="">
+                   <option value="15">15</option>
+                   <option value="25">25</option>
+                   <option value="35">35</option>
+               </select>
+               <span class="txt">por página</span>
+           </div>
+       </div>
+
+       <div class="flex-container">
+           {% for p in 0..19 %}
+               <div class="flex-item">
+                   <a href="{{ path('front_productoDetalle')  }}">
+                       <figure class="prod-image">
+                           <span class="icon-lupa see"></span>
+                           <img src="{{ asset('img/producto.jpg') }}" alt="">
+                           <figcaption>
+                               MONITOR ACER 19.5" V206HQL HD
+                               VGA LED 1366X768 T.R. 5 MS NEGRO
+                           </figcaption>
+                       </figure>
+                   </a>
+                   <div class="bottom">
+                       <div class="prices">
+                           <h4 class="old-price">$5,317.00</h4>
+                           <h4 class="current-price">$,257.20</h4>
+                       </div>
+                       <a href="" class="addToCar">Agregar al Carrito</a>
+                   </div>
+               </div>
+
+           {% endfor %}
+       </div>
+
+       <section class="more-info">
+           <figure class="banner">
+               <img src="{{ asset('img/servicios/banner-asus.jpg') }}" alt="">
+               <div class="triangle"></div>
+               <div class="mascara">
+                   <h5>La nueva Laptop</h5>
+                   <h4>Asus N76</h4>
+                   <a href="" class="more">Ver más</a>
+               </div>
+           </figure>
+           <figure class="banner" >
+               <img src="{{ asset('img/servicios/banner-acer.jpg') }}" alt="">
+               <div class="mascara" style="right: 0; top:30%;left: inherit;">
+                   <h5>Tenemos la nueva Laptop</h5>
+                   <h4>Aspire Switch 10 E</h4>
+                   <a href="" class="more">Ver más</a>
+               </div>
+           </figure>
+       </section>
+
+   </div>
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $('.owl-banners').owlCarousel({
+            dots: true,
+            items: 1,
+            loop: true,
+            autoplay: true,
+            autoPlayHoverPause: true,
+            autoPlaySpeed: 11000
+        });
+
+        $('.owl-productos').owlCarousel({
+            dots: true,
+            items: 4,
+            loop: true,
+            autoplay: true,
+            autoPlayHoverPause: true,
+            autoPlaySpeed: 11000,
+            responsive:{
+                0:{
+                    items: 1
+                },
+                480:{
+                    items: 2
+                },
+                767:{
+                    items: 3
+                },
+                992:{
+                    items: 4
+                }
+            }
+        });
+    </script>
+{% endblock %}

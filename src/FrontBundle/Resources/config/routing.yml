@@ -1,0 +1,24 @@
+front_homepage:
+    path:     /
+    defaults: { _controller: FrontBundle:Default:index }
+
+front_productos:
+    path:     /productos/
+    defaults: { _controller: FrontBundle:Default:productos }
+
+front_productoDetalle:
+    path:     /productos/detalle
+    defaults: { _controller: FrontBundle:Default:productoDetalle }
+
+front_empresa:
+    path:     /empresa/
+    defaults: { _controller: FrontBundle:Default:empresa }
+
+front_servicios:
+    path:     /servicios/
+    defaults: { _controller: FrontBundle:Default:servicios }
+
+
+front_contacto:
+    path:     /contacto/
+    defaults: { _controller: FrontBundle:Default:contacto }

@@ -1,0 +1,290 @@
+h3.title-section{
+  max-width: 240px;
+  background: $grayDark;
+  font-family: $futStdMedium;
+  font-size: 20px;
+  color: $white;
+  padding: 10px 30px;
+  margin: 50px 0 0;
+
+}
+.flex-container{
+  width: 100%;
+  .flex-item,.flex-item-c{
+    border: 1px solid #CCC;
+    margin: 30px 10px;
+    padding-bottom: 10px;
+    position: relative;
+    figure{
+      width: 100%;
+      max-width: 200px;
+      margin: auto;
+      cursor: pointer;
+      img{
+        width: 100%;
+      }
+      figcaption{
+        color: $grayDark;
+        font-family: $futStdMedium;
+        font-size: 13px;
+      }
+      span.see{
+        position: absolute;
+        top:5px;
+        right:5px;
+        font-size: 15px;
+        color:$white;
+        width: 25px;
+        height: 25px;
+        background: #999;
+        text-align: center;
+        line-height: 28px;
+        border-radius: 50%;
+      }
+    }
+    .bottom{
+      display: flex;
+      justify-content: space-around;
+      .prices{
+        .old-price{
+          font-family:$futStdLight;
+          font-size: 14px;
+          color:$grayLight;
+          text-decoration: line-through;
+        }
+        .current-price{
+          font-family: $futStdMedium;
+          font-size: 14px;
+          color:$red;
+          margin:0;
+        }
+      }
+      a.addToCar{
+        display: inline-block;
+        background: $grayDark;
+        width: 115px;
+        height: 25px;
+        text-align: center;
+        line-height: 25px;
+        font-family: $futStdBook;
+        font-size: 12px;
+        align-self: flex-end;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+
+  }
+}
+
+.services{
+  margin: 50px 0;
+  h4{
+    font-family: $futStdBook;
+    font-size: 35px;
+    color: $green;
+    text-align: center;
+  }
+  .flex-grid{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    @media screen and (max-width: 992px){
+      justify-content: center;
+    }
+    @media screen and (max-width: 680px){
+      flex-direction: column;
+      align-items: center;
+    }
+    .flex-item{
+      width: 25%;
+      padding-right: 15px;
+      max-width: 370px;
+      display: flex;
+      align-items: center;
+      @media screen and (max-width: 1200px){
+        width: 50%;
+      }
+      @media screen and (max-width: 992px){
+        width: 100%;
+        justify-content: space-between;
+
+      }
+      @media screen and (max-width: 680px){
+       text-align: center;
+      }
+      h2.title{
+        font-family: $futStdLight;
+        font-size: 20px;
+        color:$grayMedium;
+        display: flex;
+        flex-direction: column;
+        @media screen and (max-width: 680px){
+          width: 100%;
+        }
+        em{
+          font-style: normal;
+          color:$green;
+        }
+      }
+      img{
+        max-width: 130px;
+        @media screen and (max-width: 680px){
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+section.components{
+  display: flex;
+  width: 100%;
+  margin-bottom: 70px;
+  @media screen and (max-width: 768px){
+    flex-direction: column;
+    align-items: center;
+    padding: 0 6px;
+
+  }
+  figure{
+    width: 50%;
+    max-width: 500px;
+    height: 260px;
+    background: url("../img/compucomponentes.jpg") center center no-repeat;
+    @media screen and (max-width: 768px){
+      width: 100%;
+    }
+  }
+  .info-box{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 35px;
+    @media screen and (max-width: 768px){
+      width: 100%;
+      padding-left: 0;
+    }
+    h3.title{
+      text-align: center;
+      margin: 0;
+      font-family:$futStdBold;
+      font-size: 40px;
+      color:$green;
+      @media screen and (max-width: 768px){
+        margin: 10px 0 5px;
+      }
+    }
+    h2.desc{
+      text-align: center;
+      font-family:$futStdBook;
+      font-size: 19px;
+      color:$grayDark;
+      margin: 6px 0;
+    }
+
+    a.contact-us{
+      text-align: center;
+      font-family:$futStdMedium;
+      font-size: 15px;
+      color:$white;
+      width: 135px;
+      height: 27px;
+      background:$grayDark;
+      border-bottom: 3px solid darken($green,10%);
+      align-self: flex-end;
+      text-decoration: none;
+      transition: all .4s;
+      cursor: pointer;
+      &:hover{
+        background:lighten($grayDark,10%);
+        border-bottom: 3px solid $green,10%;
+      }
+    }
+  }
+}
+section.more-info{
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+  @media screen and (max-width: 992px){
+    flex-direction: column-reverse;
+  }
+
+  .banner{
+    width: 50%;
+    max-width: 585px;
+    position: relative;
+    @media screen and (max-width: 992px){
+      width: 100%;
+    }
+    @media screen and (max-width: 767px){
+      margin-top: 20px;
+    }
+    img{
+      width: 100%;
+    }
+    h5{
+      font-family: $futStdLight;
+      font-size: 20px;
+      color:$grayMedium;
+      margin: 0;
+    }
+    h4{
+      font-family: $futStdMedium;
+      font-size: 20px;
+      color:$green;
+      margin: 0
+    }
+
+    a.more{
+      width: 66px;
+      height: 25px;
+      text-align: center;
+      line-height: 25px;
+      font-family: $futStdMedium;
+      font-size: 15px;
+      border: 1px solid $grayDark;
+      color:$grayDark;
+      display: inline-block;
+      margin-top: 10px;
+      text-decoration: none;
+      transition: all.4s;
+      cursor: pointer;
+      &:hover{
+        background:$green;
+        color:$white;
+      }
+    }
+    &:first-child{
+      .mascara{
+        position: absolute;
+        left:0;
+        right: 0;
+        bottom: 0;
+        text-align: center;
+      }
+    }
+    &:last-child{
+      .triangle{
+        display: block;
+        position: absolute;
+        top: 0;
+        left:0;
+        width: 0;
+        height: 0;
+        border-top: 180px solid rgba($white,.9%);
+        border-right: 400px solid transparent;
+      }
+      .mascara{
+        position: absolute;
+        left:0;
+        top:0;
+        text-align: center;
+        padding: 15px 15px;
+      }
+    }
+  }
+}

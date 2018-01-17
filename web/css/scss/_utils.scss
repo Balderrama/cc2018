@@ -1,0 +1,32 @@
+//VARIABLES
+$lato: 'Lato';
+$futLight: 'FuturaLight';
+$futStdHeavy: 'FuturaStdHeavy';
+$futStdLightOblique: 'FuturaStdLightOblique';
+$futStdLight: 'FuturaStdLight';
+$futStdBold: 'FuturaStdBold';
+$futStdBook: 'FuturaStdBook';
+$futStdMedium: 'FuturaStdMedium';
+$futStdConLight: 'FuturaStdCondensedLight';
+
+//COLORES
+$grayLight: #666666;
+$grayMedium: #4D4D4D;
+$grayNormal: #808080;
+$white: #FFF;
+$grayDark:#333;
+$black:#1A1A1A;
+$green:#8BC53F;
+$red:#ED1C24;
+
+
+.left-0{
+  left:0 !important;
+  transition: all .3s;
+}
+
+p.paragraph{
+  font-family:$futStdConLight;
+  font-size: 16px;
+  color:$grayLight;
+}
